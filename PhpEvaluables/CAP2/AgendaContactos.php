@@ -1,74 +1,77 @@
+<!doctype html>
+<!-- Desarrollo Web en Entorno Servidor -->
+<!-- Tema 2 : Características del Lenguaje PHP -->
+<!-- Solución a la tarea: 
+    Creación de una agenda de contactos 
+    No utiliza bases de datos, ni sesiones. Almacena los contactos
+    dentro del formulario como campos oculos 
+-->
 <html>
     <head>
-
-        <title>AGENDA DE CONTACTOS</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Agenda de contactos</title>
     </head>
     <body>
-        
         <?php
-        $contacto= '';
-        $telefono= '';
-        $nombre='';
-        
- /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */ 
-   echo "Rellena los siguientes campos";
-        if(isset($_GET['contacto'])){
-        $contacto=$_GET['contacto'];}
-        else{
-            $contacto =array();
-             //Creamos $contacto com un array vacio
-        }
+        if (isset($_GET['agenda']))
+            $agenda = $_GET['agenda'];
+        else
+            $agenda = array(); // Creamos $agenda como un array vacío  
         
         
-        if(isset($_GET['submit']))
+        if (isset($_GET['submit']))
         {
-              $nombre = filter_input(INPUT_GET, $_GET['nombre']);
-              $telefono=filter_input(INPUT_GET, $_GET['telefono']);
-              if(empty($nombre))
-              {
-                  echo "debe introducir un nombre";
-              }elseif(empty ($telefono)){
-                  unset($contacto[$nombre]);
-              } elseif($nombre && $telefono) {
-                  set($contacto);
-                  if ($nombre=$nombre) {
-                       unset($contacto[$nombre]);
-                       unset($contacto[$telefono]);
-                  }elseif ($telefono=$telefono) {
-                       unset($contacto[$nombre]);
-                       unset($contacto[$telefono]);
-                        
+            $nuevo_nombre = filter_input(INPUT_GET,'nombre');
+            $nuevo_telefono = filter_input(INPUT_GET,'telefono');
+            if (empty($nuevo_nombre))
+            {
+                echo "<p style='color:red'>Debe introducir un nombre!!</p><br />";
+            }
+            elseif (empty($nuevo_telefono))
+            {
+                unset($agenda[$nuevo_nombre]);
+            }
+            else
+            {
+                $agenda[$nuevo_nombre] = $nuevo_telefono;
+            }
         }
-              }
-          }
-        
-        
-?>
+        ?>
 
-       <form method="get">
-           
-            
-            <input type="text" name="contacto[]" value=" "/>
-            <input type="text" name="telefono" value=" "/>
-            <input type="submit" name="submit" value="Enviar">
-            
-            
+        <!-- Creamos el formulario de introducción de un nuevo contacto -->
+        <h2>Nuevo contacto</h2>
+
+        <form>
+            <!-- Metemos los contactos ya existentes ocultos en el formulario -->
+            <div style="align-items: left">
+                <?php
+                foreach ($agenda as $nom => $telf) {
+                    echo '<input type="hidden" name="agenda[' . $nom . ']" ';
+                    echo 'value="' . $telf . '"/>';
+                }
+                ?>
+                <label>Nombre:<input type="text" name="nombre"/></label><br />
+                <label>Teléfono:<input type="number" name="telefono"/></label><br />
+                <input type="submit" name='submit' value="Ejecutar"/><br />
+            </div>
         </form>
-            
-        
-        <h3>CONTACTOS</h3>
-        <?php
-                echo "<ul>";
-                   foreach($contacto as $nombre =>$telefono){
-                       echo "<li>" . $nombre . '=' . $telefono . "<li/>" ;
-                   }
-                    echo "<ul/>";
+        <br />
 
-               
-            ?>
+        <!-- Mostramos los contactos de la agenda -->
+        <h2>Agenda</h2>
+        <?php
+        if (count($agenda) == 0)
+        {
+            echo "<p>No hay contactos en la agenda.</p>";
+        }
+        else
+        {
+            echo "<ul>";
+            foreach ($agenda as $nom => $telf) {
+                echo "<li>" . $nom . ': ' . $telf . "</li>";
+            }
+            echo "</ul>";
+        }
+        ?>        
     </body>
 </html>
-
