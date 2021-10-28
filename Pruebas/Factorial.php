@@ -7,5 +7,5 @@
       } 
       return $n * factorial($n - 1);
     }
-echo "El factorial de 3 es:" . factorial(3);
+echo "El numero factorial de 3 es:" . factorial(3);
     ?>
