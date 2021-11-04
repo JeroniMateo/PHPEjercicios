@@ -17,8 +17,8 @@
 - 2.2. Algoritmo Ordenación
 - 2.3. Tabla Multiplicar
 - 2.4. Formularios
--    2.4.1. Sin Validar
--    2.4.2. Validado
+ -    2.4.1. Sin Validar
+ -    2.4.2. Validado
 
 3. CHAPTER 3
 
