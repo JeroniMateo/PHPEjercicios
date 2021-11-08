@@ -26,5 +26,6 @@
 - 3.2. Magic Get-Set
 - 3.3. Clase Padre-Hija
 - 3.3 Agenda Con Sesiones
+- 3.4 Num Visitas Cookies
 
 * PRUEBAS
