@@ -18,10 +18,8 @@ if ( isset( $_COOKIE[ 'visitas' ] ) ) {
     $mensaje = 'Numero de visitas: '.$_COOKIE[ 'visitas' ];
 }
 else {
-
     setcookie( 'visitas', 2, time() + 3600 * 24 );
     $mensaje = 'Bienvenido a nuestra pagina, espero que disfrutes de tu 1a vez';
 }
-
 print_r($mensaje);
 ?>
