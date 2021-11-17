@@ -4,16 +4,10 @@ peticiones sucesivas no validadas.  Emplea filter_input con filtros de validaciÃ
 -->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      
     </head>
     <body>
+        <H1>VAMOS A VALIDAR</H1>
         <?php
         // Si se reciben datos del forumulario, validamos.
         $nombre = '';
@@ -40,8 +34,6 @@ peticiones sucesivas no validadas.  Emplea filter_input con filtros de validaciÃ
         } else {
             displayForm($errores_array);
         }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
 
         function validarNombre($nom = "") {
             global $errores_array;

@@ -22,7 +22,6 @@ for ($x=1; $x <=10 ; $x++){
 	echo '<tr><td>'. $tabla.' * '.$x.' = '. ($tabla * $x) .'<td></tr>' ;
 }
 echo '</tr>';
-
 }
 echo '</table>';
 ?>
