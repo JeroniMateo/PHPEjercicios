@@ -64,23 +64,23 @@
         <br>
         
         <label>Lastname:</label> <input type="text" name="lastname">
-        <span class="error" style="color: red;">  <?php echo $lastnameErr;?></span>
+        <span  style="color: red;">  <?php echo $lastnameErr;?></span>
         <br>
         
         <label>E-mail:</label> <input type="text" name="email">
-        <span class="error" style="color: red;">* <?php echo $emailErr;?></span>
+        <span style="color: red;">* <?php echo $emailErr;?></span>
         <br>
         
         <label>Age:</label> <input type="number" name="age">
-        <span class="error" style="color: red;"> <?php echo $ageErr;?></span>
+        <span  style="color: red;"> <?php echo $ageErr;?></span>
         <br>
         
         <label>Comment:</label> <textarea name="comment" rows="5" cols="40"></textarea>
-        <span class="error" style="color: red;">  <?php echo $commentErr;?></span>
+        <span  style="color: red;">  <?php echo $commentErr;?></span>
         <br>
         
         <label>Password:</label><input type="password" name="password">
-        <span class="error" style="color: red;">* <?php echo $passwordErr;?></span>
+        <span  style="color: red;">* <?php echo $passwordErr;?></span>
         <br>
         <input type="submit" name="submit" value="Submit">
 
