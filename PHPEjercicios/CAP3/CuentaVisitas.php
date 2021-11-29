@@ -13,7 +13,6 @@
 </html>
 <?php
 if ( isset( $_COOKIE[ 'visitas' ] ) ) {
-
     setcookie( 'visitas', $_COOKIE[ 'visitas' ] + 1, time() + 3600 * 24 );
     $mensaje = 'Numero de visitas: '.$_COOKIE[ 'visitas' ];
 }
