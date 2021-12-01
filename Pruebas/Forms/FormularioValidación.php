@@ -1,7 +1,11 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
@@ -17,33 +21,33 @@
             $name = test_input($_POST["name"]);
         }
 
-        if(empty($_POST["lastname"])){
-            $lastnameErr=" ";
-        }else{
+        if (empty($_POST["lastname"])) {
+            $lastnameErr = " ";
+        } else {
             $lastname = test_input($_POST["lastname"]);
         }
 
-        if(empty($_POST["email"])){
+        if (empty($_POST["email"])) {
             $emailErr = "Email is required";
-        }else{
+        } else {
             $email = test_input($_POST["email"]);
         }
-        if(empty($_POST["age"])){
+        if (empty($_POST["age"])) {
             $age = "";
-        }else{
+        } else {
             $age = test_input($_POST["age"]);
         }
 
-        if(empty($_POST["lastname"])){
-            $commentErr=" ";
-        }else{
+        if (empty($_POST["lastname"])) {
+            $commentErr = " ";
+        } else {
             $comment = test_input($_POST["comment"]);
         }
 
-        if(empty($_POST["lastname"])){
-            $passwordErr=" password is required";
-        }else{
-        $password = test_input($_POST["password"]);
+        if (empty($_POST["lastname"])) {
+            $passwordErr = " password is required";
+        } else {
+            $password = test_input($_POST["password"]);
         }
     }
 
@@ -58,29 +62,29 @@
 
     <h1>Formulario de validación</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-       <label style="color: red;">* required field</label> <br>
+        <label style="color: red;">* required field</label> <br>
         <label>Name:</label> <input type="text" name="name">
-        <span  style="color: red;">* <?php echo $nameErr;?></span>
+        <span style="color: red;">* <?php echo $nameErr; ?></span>
         <br>
-        
+
         <label>Lastname:</label> <input type="text" name="lastname">
-        <span  style="color: red;">  <?php echo $lastnameErr;?></span>
+        <span style="color: red;"> <?php echo $lastnameErr; ?></span>
         <br>
-        
+
         <label>E-mail:</label> <input type="text" name="email">
-        <span style="color: red;">* <?php echo $emailErr;?></span>
+        <span style="color: red;">* <?php echo $emailErr; ?></span>
         <br>
-        
+
         <label>Age:</label> <input type="number" name="age">
-        <span  style="color: red;"> <?php echo $ageErr;?></span>
+        <span style="color: red;"> <?php echo $ageErr; ?></span>
         <br>
-        
+
         <label>Comment:</label> <textarea name="comment" rows="5" cols="40"></textarea>
-        <span  style="color: red;">  <?php echo $commentErr;?></span>
+        <span style="color: red;"> <?php echo $commentErr; ?></span>
         <br>
-        
+
         <label>Password:</label><input type="password" name="password">
-        <span  style="color: red;">* <?php echo $passwordErr;?></span>
+        <span style="color: red;">* <?php echo $passwordErr; ?></span>
         <br>
         <input type="submit" name="submit" value="Submit">
 
