@@ -5,17 +5,13 @@ class Fruit {
   public $color;
 
   // Methods
-
-function set_name($name){
+  function set_name($name) {
     $this->name = $name;
-}
-
+  }
   function get_name() {
     return $this->name;
   }
-
-
-function set_color($color) {
+  function set_color($color) {
     $this->color = $color;
   }
   function get_color() {
@@ -23,11 +19,10 @@ function set_color($color) {
   }
 }
 
-$fruit = new Fruit();
-$fruit->set_name('Apple');
-$fruit->set_color('red');
-
-echo "Fruit: " .  $fruit-> get_name();
+$apple = new Fruit();
+$apple->set_name('Apple');
+$apple->set_color('Red');
+echo "Name: " . $apple->get_name();
 echo "<br>";
-echo "Color: ". $fruit->get_color();
+echo "Color: " . $apple->get_color();
 ?>
