@@ -1,7 +1,5 @@
 <!doctype html>
-<!-- Ejemplo de formulario con validación de campos, y que conserva el valor de los campos validados entre 
-peticiones sucesivas no validadas.  Emplea filter_input con filtros de validación pero no sanitiza.
--->
+
 <html>
 
 <head>
@@ -26,10 +24,12 @@ peticiones sucesivas no validadas.  Emplea filter_input con filtros de validaci�
         if ($email === FALSE && is_null($email)) {
             $errores_array[] = "EMAIL: introduzca un correo válido";
         }
-
-        if (!count($errores_array)) { // ha pasado la validación
+        // ha pasado la validación
+        if (!count($errores_array)) { 
             echo "Validación correcta- Los datos introducidos son: $nombre, $edad y $email";
-        } else { //no ha pasado la validación
+        }
+        //no ha pasado la validación
+        else { 
             echo "Validación Falló:<br/>";
             displayForm($errores_array);
         }
